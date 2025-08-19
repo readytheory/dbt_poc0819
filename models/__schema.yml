@@ -1,0 +1,38 @@
+version: 2
+
+# There are 4 generic in-built test cases {1. Unique , 2.Not null , 3. Relationship(Checking if Key exists in other table), 4.Accepted Values}
+models:
+  - name: dim_listings
+    description: Listings dimension table which contain airbnb listings
+    columns:
+      - name: listing_id
+        description: Primary key for the listing
+        tests:
+          - unique
+          - not_null
+
+      - name: host_id
+        description: The host_id references to the host table
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_hosts')
+              field: host_id
+
+      - name: room_type
+        tests:
+          - accepted_values:
+              values: ['Entire home/apt','Private room','Shared room','Hotel room']     
+
+      - name: listing_id
+        tests:
+          - chk_duplicates
+      
+                
+      
+
+          
+          
+
+
+          
