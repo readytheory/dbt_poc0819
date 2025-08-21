@@ -1,0 +1,11 @@
+learn_dbt_projects:
+    target: dev
+    outputs:
+        dev:
+         type: snowflake
+         role: DEV_XFORM_DE_ROLE
+         warehouse: DEV_XFORM_WH
+         database: DEV_DEVWIP_DB
+         schema: A168940
+         account: 'not needed'
+         user: 'not needed'
