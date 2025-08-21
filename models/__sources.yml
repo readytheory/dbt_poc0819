@@ -2,12 +2,13 @@ version: 2
 
 sources:  
   - name: airbnb
-    schema: raw
+    database: DEV_DEVWIP_DB
+    schema: A168940 
     tables:
         - name: listings
           identifier: raw_listings
         - name: hosts
-          identifier: raw_hosts
+          identifier: raw_hosts #actual table name
         - name: reviews
           identifier: raw_reviews
           loaded_at_field: date
@@ -23,6 +24,7 @@ sources:
           ## You can specify the code between line # 15-20 the following way
           # warn_after:{count:1,period:hour}
           # error_after:{count:24,period:hour}
+          #TESTING GIT PUSH NEW BRANCH
           
 
               
