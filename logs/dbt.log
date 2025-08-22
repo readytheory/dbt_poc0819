@@ -1279,3 +1279,355 @@ from listing
 [0m11:22:05.477522 [debug] [Dummy-1   ]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 27.677925, "process_in_blocks": "0", "process_kernel_time": 1.33, "process_mem_max_rss": "439868", "process_out_blocks": "0", "process_user_time": 6.87}
 [0m11:22:05.478286 [debug] [Dummy-1   ]: Command `cli build` succeeded at 11:22:05.477936 after 27.68 seconds
 [0m11:22:05.478914 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 08:34:56.641010 | 30189664-a9ef-48f2-96a1-5315387252ab ==============================
+[0m08:34:56.641010 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m08:34:56.642229 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/tmp/dbt/logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'log_format': 'default', 'target_path': '/tmp/dbt/target/', 'invocation_command': 'dbt ', 'send_anonymous_usage_stats': 'False'}
+[0m08:34:57.014709 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m08:34:57.801784 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m08:34:58.126931 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m08:34:58.127705 [debug] [Dummy-1   ]: Partial parsing enabled, no changes found, skipping parsing
+[0m08:34:58.526626 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m08:34:58.529527 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m08:34:58.588743 [info ] [Dummy-1   ]: Found 8 models, 1 snapshot, 9 data tests, 1 seed, 3 sources, 476 macros
+[0m08:34:58.592098 [info ] [Dummy-1   ]: 
+[0m08:34:58.592809 [info ] [Dummy-1   ]: Concurrency: 1 threads (target='dev')
+[0m08:34:58.593410 [info ] [Dummy-1   ]: 
+[0m08:34:58.594405 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m08:34:58.602170 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DEV_DEVWIP_DB'
+[0m08:34:58.732734 [debug] [ThreadPool]: Using snowflake connection "list_DEV_DEVWIP_DB"
+[0m08:34:58.733561 [debug] [ThreadPool]: On list_DEV_DEVWIP_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "learn_dbt_projects", "target_name": "dev", "connection_name": "list_DEV_DEVWIP_DB"} */
+show terse schemas in database DEV_DEVWIP_DB
+    limit 10000
+[0m08:34:58.734256 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:35:00.465510 [debug] [ThreadPool]: SQL status: SUCCESS 73 in 1.731 seconds
+[0m08:35:00.472913 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DEV_DEVWIP_DB_raw'
+[0m08:35:00.490590 [debug] [ThreadPool]: Using snowflake connection "list_DEV_DEVWIP_DB_raw"
+[0m08:35:00.491334 [debug] [ThreadPool]: On list_DEV_DEVWIP_DB_raw: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "learn_dbt_projects", "target_name": "dev", "connection_name": "list_DEV_DEVWIP_DB_raw"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m08:35:00.491946 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:35:00.976778 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.485 seconds
+[0m08:35:00.982995 [debug] [ThreadPool]: Using snowflake connection "list_DEV_DEVWIP_DB_raw"
+[0m08:35:00.983774 [debug] [ThreadPool]: On list_DEV_DEVWIP_DB_raw: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "learn_dbt_projects", "target_name": "dev", "connection_name": "list_DEV_DEVWIP_DB_raw"} */
+show objects in DEV_DEVWIP_DB.raw
+    limit 10000
+    
+;
+[0m08:35:01.092955 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.108 seconds
+[0m08:35:01.095922 [debug] [ThreadPool]: Using snowflake connection "list_DEV_DEVWIP_DB_raw"
+[0m08:35:01.096633 [debug] [ThreadPool]: On list_DEV_DEVWIP_DB_raw: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "learn_dbt_projects", "target_name": "dev", "connection_name": "list_DEV_DEVWIP_DB_raw"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m08:35:01.172869 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.075 seconds
+[0m08:35:01.175814 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DEV_DEVWIP_DB_raw, now list_DEV_DEVWIP_DB_A168940)
+[0m08:35:01.181679 [debug] [ThreadPool]: Using snowflake connection "list_DEV_DEVWIP_DB_A168940"
+[0m08:35:01.182478 [debug] [ThreadPool]: On list_DEV_DEVWIP_DB_A168940: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "learn_dbt_projects", "target_name": "dev", "connection_name": "list_DEV_DEVWIP_DB_A168940"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m08:35:01.183132 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:35:01.686133 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.503 seconds
+[0m08:35:01.688869 [debug] [ThreadPool]: Using snowflake connection "list_DEV_DEVWIP_DB_A168940"
+[0m08:35:01.689599 [debug] [ThreadPool]: On list_DEV_DEVWIP_DB_A168940: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "learn_dbt_projects", "target_name": "dev", "connection_name": "list_DEV_DEVWIP_DB_A168940"} */
+show objects in DEV_DEVWIP_DB.A168940
+    limit 10000
+    
+;
+[0m08:35:01.788435 [debug] [ThreadPool]: SQL status: SUCCESS 9 in 0.098 seconds
+[0m08:35:01.791603 [debug] [ThreadPool]: Using snowflake connection "list_DEV_DEVWIP_DB_A168940"
+[0m08:35:01.792304 [debug] [ThreadPool]: On list_DEV_DEVWIP_DB_A168940: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "learn_dbt_projects", "target_name": "dev", "connection_name": "list_DEV_DEVWIP_DB_A168940"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m08:35:01.849086 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.056 seconds
+[0m08:35:01.861101 [debug] [Thread-2 (]: Began running node model.learn_dbt_projects.src_hosts
+[0m08:35:01.862024 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_DEV_DEVWIP_DB_A168940, now model.learn_dbt_projects.src_hosts)
+[0m08:35:01.862848 [debug] [Thread-2 (]: Began compiling node model.learn_dbt_projects.src_hosts
+[0m08:35:01.877662 [debug] [Thread-2 (]: Writing injected SQL for node "model.learn_dbt_projects.src_hosts"
+[0m08:35:01.879142 [debug] [Thread-2 (]: Finished running node model.learn_dbt_projects.src_hosts
+[0m08:35:01.879979 [debug] [Thread-2 (]: Began running node model.learn_dbt_projects.src_listings
+[0m08:35:01.881150 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.learn_dbt_projects.src_hosts, now model.learn_dbt_projects.src_listings)
+[0m08:35:01.881847 [debug] [Thread-2 (]: Began compiling node model.learn_dbt_projects.src_listings
+[0m08:35:01.888071 [debug] [Thread-2 (]: Writing injected SQL for node "model.learn_dbt_projects.src_listings"
+[0m08:35:01.889401 [debug] [Thread-2 (]: Finished running node model.learn_dbt_projects.src_listings
+[0m08:35:01.890244 [debug] [Thread-2 (]: Began running node model.learn_dbt_projects.src_reviews
+[0m08:35:01.891381 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.learn_dbt_projects.src_listings, now model.learn_dbt_projects.src_reviews)
+[0m08:35:01.892075 [debug] [Thread-2 (]: Began compiling node model.learn_dbt_projects.src_reviews
+[0m08:35:01.898511 [debug] [Thread-2 (]: Writing injected SQL for node "model.learn_dbt_projects.src_reviews"
+[0m08:35:01.899810 [debug] [Thread-2 (]: Finished running node model.learn_dbt_projects.src_reviews
+[0m08:35:01.900613 [debug] [Thread-2 (]: Began running node model.learn_dbt_projects.dim_hosts
+[0m08:35:01.902012 [info ] [Thread-2 (]: 1 of 5 START sql view model A168940.dim_hosts .................................. [RUN]
+[0m08:35:01.902873 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.learn_dbt_projects.src_reviews, now model.learn_dbt_projects.dim_hosts)
+[0m08:35:01.903533 [debug] [Thread-2 (]: Began compiling node model.learn_dbt_projects.dim_hosts
+[0m08:35:01.912586 [debug] [Thread-2 (]: Writing injected SQL for node "model.learn_dbt_projects.dim_hosts"
+[0m08:35:01.913591 [debug] [Thread-2 (]: Began executing node model.learn_dbt_projects.dim_hosts
+[0m08:35:01.972280 [debug] [Thread-2 (]: Writing runtime sql for node "model.learn_dbt_projects.dim_hosts"
+[0m08:35:01.974312 [debug] [Thread-2 (]: Using snowflake connection "model.learn_dbt_projects.dim_hosts"
+[0m08:35:01.975130 [debug] [Thread-2 (]: On model.learn_dbt_projects.dim_hosts: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "learn_dbt_projects", "target_name": "dev", "node_id": "model.learn_dbt_projects.dim_hosts"} */
+create or replace   view DEV_DEVWIP_DB.A168940.dim_hosts
+  
+   as (
+    
+
+
+
+with  __dbt__cte__src_hosts as (
+with raw_hosts as (
+    select * from DEV_DEVWIP_DB.A168940.raw_hosts
+)
+select 
+    id as host_id,
+    name as host_name,
+    is_superhost,
+    created_at,
+    updated_at
+from 
+    raw_hosts
+), src_hosts as(
+    select * from __dbt__cte__src_hosts
+    
+    )
+select
+    host_id,
+    nvl(host_name,'Anonymous') as host_name,
+    is_superhost,
+    created_at,
+    updated_at
+from src_hosts
+  );
+[0m08:35:01.975931 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m08:35:02.656283 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.680 seconds
+[0m08:35:02.691952 [info ] [Thread-2 (]: 1 of 5 OK created sql view model A168940.dim_hosts ............................. [[32mSUCCESS 1[0m in 0.79s]
+[0m08:35:02.693018 [debug] [Thread-2 (]: Finished running node model.learn_dbt_projects.dim_hosts
+[0m08:35:02.693842 [debug] [Thread-2 (]: Began running node model.learn_dbt_projects.dim_listings
+[0m08:35:02.694908 [info ] [Thread-2 (]: 2 of 5 START sql view model A168940.dim_listings ............................... [RUN]
+[0m08:35:02.695802 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.learn_dbt_projects.dim_hosts, now model.learn_dbt_projects.dim_listings)
+[0m08:35:02.696528 [debug] [Thread-2 (]: Began compiling node model.learn_dbt_projects.dim_listings
+[0m08:35:02.707768 [debug] [Thread-2 (]: Writing injected SQL for node "model.learn_dbt_projects.dim_listings"
+[0m08:35:02.708783 [debug] [Thread-2 (]: Began executing node model.learn_dbt_projects.dim_listings
+[0m08:35:02.714564 [debug] [Thread-2 (]: Writing runtime sql for node "model.learn_dbt_projects.dim_listings"
+[0m08:35:02.716846 [debug] [Thread-2 (]: Using snowflake connection "model.learn_dbt_projects.dim_listings"
+[0m08:35:02.717892 [debug] [Thread-2 (]: On model.learn_dbt_projects.dim_listings: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "learn_dbt_projects", "target_name": "dev", "node_id": "model.learn_dbt_projects.dim_listings"} */
+create or replace   view DEV_DEVWIP_DB.A168940.dim_listings
+  
+   as (
+    
+
+with  __dbt__cte__src_listings as (
+with raw_listings as (
+    
+    select * from DEV_DEVWIP_DB.A168940.raw_listings
+    )
+select
+    id as listing_id,
+    name as listing_name,
+    listing_url,
+    room_type,
+    minimum_nights,
+    host_id,
+    price as price_str,
+    created_at,
+    updated_at
+from raw_listings
+), src_listings as (
+    select * from __dbt__cte__src_listings
+   
+)
+select
+    listing_id,
+    listing_name,
+    room_type,
+    case
+        when minimum_nights =0 then 1
+        else minimum_nights
+    end as minimum_nights,
+    host_id,
+    replace(
+        price_str, '$'
+    ):: number(10,2)
+    as price,
+    created_at,
+    updated_at
+from 
+    src_listings
+  );
+[0m08:35:02.718660 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m08:35:03.521065 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.802 seconds
+[0m08:35:03.525023 [info ] [Thread-2 (]: 2 of 5 OK created sql view model A168940.dim_listings .......................... [[32mSUCCESS 1[0m in 0.83s]
+[0m08:35:03.526173 [debug] [Thread-2 (]: Finished running node model.learn_dbt_projects.dim_listings
+[0m08:35:03.527060 [debug] [Thread-2 (]: Began running node model.learn_dbt_projects.fct_reviews
+[0m08:35:03.528428 [info ] [Thread-2 (]: 3 of 5 START sql incremental model A168940.fct_reviews ......................... [RUN]
+[0m08:35:03.529282 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.learn_dbt_projects.dim_listings, now model.learn_dbt_projects.fct_reviews)
+[0m08:35:03.529949 [debug] [Thread-2 (]: Began compiling node model.learn_dbt_projects.fct_reviews
+[0m08:35:03.547898 [debug] [Thread-2 (]: Writing injected SQL for node "model.learn_dbt_projects.fct_reviews"
+[0m08:35:03.548956 [debug] [Thread-2 (]: Began executing node model.learn_dbt_projects.fct_reviews
+[0m08:35:03.604404 [debug] [Thread-2 (]: Using snowflake connection "model.learn_dbt_projects.fct_reviews"
+[0m08:35:03.605315 [debug] [Thread-2 (]: On model.learn_dbt_projects.fct_reviews: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "learn_dbt_projects", "target_name": "dev", "node_id": "model.learn_dbt_projects.fct_reviews"} */
+create or replace  temporary view DEV_DEVWIP_DB.A168940.fct_reviews__dbt_tmp
+  
+   as (
+    
+
+with  __dbt__cte__src_reviews as (
+with raw_reviews as (
+    select * from DEV_DEVWIP_DB.A168940.raw_reviews
+)
+select 
+    listing_id,
+    date as review_date,
+    reviewer_name,
+    comments as review_text,
+    sentiment as review_sentiment
+from 
+    raw_reviews
+), src_reviews as (
+    select * from __dbt__cte__src_reviews
+)
+select
+    *
+from src_reviews
+where review_text is not null
+
+
+    -- this filter will only be applied on an incremental run
+    and  review_date > (select max(review_date) from DEV_DEVWIP_DB.A168940.fct_reviews) 
+    -- DEV_DEVWIP_DB.A168940.fct_reviews) refers to the fct_reviews table
+
+  );
+[0m08:35:03.606210 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m08:35:04.352030 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.746 seconds
+[0m08:35:04.366791 [debug] [Thread-2 (]: Using snowflake connection "model.learn_dbt_projects.fct_reviews"
+[0m08:35:04.367621 [debug] [Thread-2 (]: On model.learn_dbt_projects.fct_reviews: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "learn_dbt_projects", "target_name": "dev", "node_id": "model.learn_dbt_projects.fct_reviews"} */
+describe table DEV_DEVWIP_DB.A168940.fct_reviews__dbt_tmp
+[0m08:35:04.428987 [debug] [Thread-2 (]: SQL status: SUCCESS 5 in 0.054 seconds
+[0m08:35:04.436432 [debug] [Thread-2 (]: Using snowflake connection "model.learn_dbt_projects.fct_reviews"
+[0m08:35:04.437307 [debug] [Thread-2 (]: On model.learn_dbt_projects.fct_reviews: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "learn_dbt_projects", "target_name": "dev", "node_id": "model.learn_dbt_projects.fct_reviews"} */
+describe table DEV_DEVWIP_DB.A168940.fct_reviews
+[0m08:35:04.495003 [debug] [Thread-2 (]: SQL status: SUCCESS 5 in 0.057 seconds
+[0m08:35:04.516364 [debug] [Thread-2 (]: Using snowflake connection "model.learn_dbt_projects.fct_reviews"
+[0m08:35:04.517380 [debug] [Thread-2 (]: On model.learn_dbt_projects.fct_reviews: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "learn_dbt_projects", "target_name": "dev", "node_id": "model.learn_dbt_projects.fct_reviews"} */
+describe table DEV_DEVWIP_DB.A168940.fct_reviews__dbt_tmp
+[0m08:35:04.571405 [debug] [Thread-2 (]: SQL status: SUCCESS 5 in 0.053 seconds
+[0m08:35:04.581106 [debug] [Thread-2 (]: Using snowflake connection "model.learn_dbt_projects.fct_reviews"
+[0m08:35:04.582043 [debug] [Thread-2 (]: On model.learn_dbt_projects.fct_reviews: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "learn_dbt_projects", "target_name": "dev", "node_id": "model.learn_dbt_projects.fct_reviews"} */
+describe table "DEV_DEVWIP_DB"."A168940"."FCT_REVIEWS"
+[0m08:35:04.630446 [debug] [Thread-2 (]: SQL status: SUCCESS 5 in 0.047 seconds
+[0m08:35:04.644717 [debug] [Thread-2 (]: 
+    In "DEV_DEVWIP_DB"."A168940"."FCT_REVIEWS":
+        Schema changed: False
+        Source columns not in target: []
+        Target columns not in source: []
+        New column types: []
+  
+[0m08:35:04.683335 [debug] [Thread-2 (]: Writing runtime sql for node "model.learn_dbt_projects.fct_reviews"
+[0m08:35:04.684971 [debug] [Thread-2 (]: Using snowflake connection "model.learn_dbt_projects.fct_reviews"
+[0m08:35:04.685820 [debug] [Thread-2 (]: On model.learn_dbt_projects.fct_reviews: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "learn_dbt_projects", "target_name": "dev", "node_id": "model.learn_dbt_projects.fct_reviews"} */
+-- back compat for old kwarg name
+  
+  begin;
+[0m08:35:04.816844 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.130 seconds
+[0m08:35:04.817707 [debug] [Thread-2 (]: Using snowflake connection "model.learn_dbt_projects.fct_reviews"
+[0m08:35:04.818455 [debug] [Thread-2 (]: On model.learn_dbt_projects.fct_reviews: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "learn_dbt_projects", "target_name": "dev", "node_id": "model.learn_dbt_projects.fct_reviews"} */
+insert into DEV_DEVWIP_DB.A168940.fct_reviews ("LISTING_ID", "REVIEW_DATE", "REVIEWER_NAME", "REVIEW_TEXT", "REVIEW_SENTIMENT")
+        (
+            select "LISTING_ID", "REVIEW_DATE", "REVIEWER_NAME", "REVIEW_TEXT", "REVIEW_SENTIMENT"
+            from DEV_DEVWIP_DB.A168940.fct_reviews__dbt_tmp
+        );
+[0m08:35:05.125640 [debug] [Thread-2 (]: SQL status: SUCCESS 0 in 0.300 seconds
+[0m08:35:05.126795 [debug] [Thread-2 (]: Using snowflake connection "model.learn_dbt_projects.fct_reviews"
+[0m08:35:05.127515 [debug] [Thread-2 (]: On model.learn_dbt_projects.fct_reviews: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "learn_dbt_projects", "target_name": "dev", "node_id": "model.learn_dbt_projects.fct_reviews"} */
+COMMIT
+[0m08:35:05.221886 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.093 seconds
+[0m08:35:05.237246 [debug] [Thread-2 (]: Applying DROP to: DEV_DEVWIP_DB.A168940.fct_reviews__dbt_tmp
+[0m08:35:05.258467 [debug] [Thread-2 (]: Using snowflake connection "model.learn_dbt_projects.fct_reviews"
+[0m08:35:05.259279 [debug] [Thread-2 (]: On model.learn_dbt_projects.fct_reviews: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "learn_dbt_projects", "target_name": "dev", "node_id": "model.learn_dbt_projects.fct_reviews"} */
+drop view if exists DEV_DEVWIP_DB.A168940.fct_reviews__dbt_tmp cascade
+[0m08:35:05.342660 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.082 seconds
+[0m08:35:05.346716 [info ] [Thread-2 (]: 3 of 5 OK created sql incremental model A168940.fct_reviews .................... [[32mSUCCESS 0[0m in 1.82s]
+[0m08:35:05.347826 [debug] [Thread-2 (]: Finished running node model.learn_dbt_projects.fct_reviews
+[0m08:35:05.348701 [debug] [Thread-2 (]: Began running node model.learn_dbt_projects.dim_listings_with_hosts
+[0m08:35:05.350192 [info ] [Thread-2 (]: 4 of 5 START sql table model A168940.dim_listings_with_hosts ................... [RUN]
+[0m08:35:05.351090 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.learn_dbt_projects.fct_reviews, now model.learn_dbt_projects.dim_listings_with_hosts)
+[0m08:35:05.351809 [debug] [Thread-2 (]: Began compiling node model.learn_dbt_projects.dim_listings_with_hosts
+[0m08:35:05.358461 [debug] [Thread-2 (]: Writing injected SQL for node "model.learn_dbt_projects.dim_listings_with_hosts"
+[0m08:35:05.359437 [debug] [Thread-2 (]: Began executing node model.learn_dbt_projects.dim_listings_with_hosts
+[0m08:35:05.394059 [debug] [Thread-2 (]: Writing runtime sql for node "model.learn_dbt_projects.dim_listings_with_hosts"
+[0m08:35:05.396362 [debug] [Thread-2 (]: Using snowflake connection "model.learn_dbt_projects.dim_listings_with_hosts"
+[0m08:35:05.397229 [debug] [Thread-2 (]: On model.learn_dbt_projects.dim_listings_with_hosts: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "learn_dbt_projects", "target_name": "dev", "node_id": "model.learn_dbt_projects.dim_listings_with_hosts"} */
+create or replace transient table DEV_DEVWIP_DB.A168940.dim_listings_with_hosts
+         as
+        (with 
+listing as (
+   select * from DEV_DEVWIP_DB.A168940.dim_listings
+),
+host as (
+    select * from DEV_DEVWIP_DB.A168940.dim_hosts
+)
+
+select 
+    listing.listing_id,
+    listing.listing_name,
+    listing.room_type,
+    listing.minimum_nights,
+    listing.price,
+    host.host_id,
+    host.host_name,
+    host.is_superhost as host_is_superhost,
+    listing.created_at,
+    greatest(listing.updated_at,host.updated_at) as updated_at
+from listing
+    left join host using(host_id)
+        );
+[0m08:35:05.397964 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m08:35:07.343329 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.945 seconds
+[0m08:35:07.347278 [info ] [Thread-2 (]: 4 of 5 OK created sql table model A168940.dim_listings_with_hosts .............. [[32mSUCCESS 1[0m in 2.00s]
+[0m08:35:07.348311 [debug] [Thread-2 (]: Finished running node model.learn_dbt_projects.dim_listings_with_hosts
+[0m08:35:07.349133 [debug] [Thread-2 (]: Began running node model.learn_dbt_projects.mart_full_moon_reviews
+[0m08:35:07.350190 [info ] [Thread-2 (]: 5 of 5 START sql table model A168940.mart_full_moon_reviews .................... [RUN]
+[0m08:35:07.351034 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.learn_dbt_projects.dim_listings_with_hosts, now model.learn_dbt_projects.mart_full_moon_reviews)
+[0m08:35:07.351693 [debug] [Thread-2 (]: Began compiling node model.learn_dbt_projects.mart_full_moon_reviews
+[0m08:35:07.361301 [debug] [Thread-2 (]: Writing injected SQL for node "model.learn_dbt_projects.mart_full_moon_reviews"
+[0m08:35:07.362318 [debug] [Thread-2 (]: Began executing node model.learn_dbt_projects.mart_full_moon_reviews
+[0m08:35:07.368037 [debug] [Thread-2 (]: Writing runtime sql for node "model.learn_dbt_projects.mart_full_moon_reviews"
+[0m08:35:07.369933 [debug] [Thread-2 (]: Using snowflake connection "model.learn_dbt_projects.mart_full_moon_reviews"
+[0m08:35:07.370739 [debug] [Thread-2 (]: On model.learn_dbt_projects.mart_full_moon_reviews: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "learn_dbt_projects", "target_name": "dev", "node_id": "model.learn_dbt_projects.mart_full_moon_reviews"} */
+create or replace transient table DEV_DEVWIP_DB.A168940.mart_full_moon_reviews
+         as
+        (
+
+
+with fct_reviews as (
+    select * from DEV_DEVWIP_DB.A168940.fct_reviews
+),
+full_moon_dates as (
+    select * from DEV_DEVWIP_DB.A168940.seed_full_moon_dates
+)
+
+select 
+    r.*,
+    case 
+        when fm.full_moon_date is null then 'Not full moon'
+        else 'Full moon'
+    end as is_full_moon
+
+from 
+    fct_reviews r 
+    left join seed_full_moon_dates fm
+        on (to_date(r.review_date)=dateadd(day,1,fm.full_moon_date))
+        );
+[0m08:35:07.371432 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m08:35:10.704412 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 3.333 seconds
+[0m08:35:10.708325 [info ] [Thread-2 (]: 5 of 5 OK created sql table model A168940.mart_full_moon_reviews ............... [[32mSUCCESS 1[0m in 3.36s]
+[0m08:35:10.709372 [debug] [Thread-2 (]: Finished running node model.learn_dbt_projects.mart_full_moon_reviews
+[0m08:35:10.712955 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m08:35:10.713680 [debug] [Dummy-1   ]: Connection 'list_DEV_DEVWIP_DB' was properly closed.
+[0m08:35:10.714343 [debug] [Dummy-1   ]: Connection 'model.learn_dbt_projects.mart_full_moon_reviews' was properly closed.
+[0m08:35:10.715122 [info ] [Dummy-1   ]: 
+[0m08:35:10.715863 [info ] [Dummy-1   ]: Finished running 1 incremental model, 2 table models, 2 view models in 0 hours 0 minutes and 12.12 seconds (12.12s).
+[0m08:35:10.717669 [debug] [Dummy-1   ]: Command end result
+[0m08:35:10.756067 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m08:35:10.758908 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m08:35:10.767549 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m08:35:10.768213 [info ] [Dummy-1   ]: 
+[0m08:35:10.768987 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m08:35:10.769582 [info ] [Dummy-1   ]: 
+[0m08:35:10.770226 [info ] [Dummy-1   ]: Done. PASS=5 WARN=0 ERROR=0 SKIP=0 TOTAL=5
+[0m08:35:10.772825 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 14.229336, "process_in_blocks": "0", "process_kernel_time": 1.42, "process_mem_max_rss": "435944", "process_out_blocks": "0", "process_user_time": 6.17}
+[0m08:35:10.773627 [debug] [Dummy-1   ]: Command `cli run` succeeded at 08:35:10.773267 after 14.23 seconds
+[0m08:35:10.774299 [debug] [Dummy-1   ]: Flushing usage events

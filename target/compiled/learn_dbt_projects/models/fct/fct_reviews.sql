@@ -20,3 +20,7 @@ select
 from src_reviews
 where review_text is not null
 
+
+    -- this filter will only be applied on an incremental run
+    and  review_date > (select max(review_date) from DEV_DEVWIP_DB.A168940.fct_reviews) 
+    -- DEV_DEVWIP_DB.A168940.fct_reviews) refers to the fct_reviews table

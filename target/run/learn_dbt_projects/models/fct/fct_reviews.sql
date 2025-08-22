@@ -1,32 +1,11 @@
-
+-- back compat for old kwarg name
   
+  begin;
     
 
-        create or replace transient table DEV_DEVWIP_DB.A168940.fct_reviews
-         as
+        insert into DEV_DEVWIP_DB.A168940.fct_reviews ("LISTING_ID", "REVIEW_DATE", "REVIEWER_NAME", "REVIEW_TEXT", "REVIEW_SENTIMENT")
         (
-
-with  __dbt__cte__src_reviews as (
-with raw_reviews as (
-    select * from DEV_DEVWIP_DB.A168940.raw_reviews
-)
-select 
-    listing_id,
-    date as review_date,
-    reviewer_name,
-    comments as review_text,
-    sentiment as review_sentiment
-from 
-    raw_reviews
-), src_reviews as (
-    select * from __dbt__cte__src_reviews
-)
-select
-    *
-from src_reviews
-where review_text is not null
-
-
+            select "LISTING_ID", "REVIEW_DATE", "REVIEWER_NAME", "REVIEW_TEXT", "REVIEW_SENTIMENT"
+            from DEV_DEVWIP_DB.A168940.fct_reviews__dbt_tmp
         );
-      
-  
+    commit;
